@@ -1,0 +1,39 @@
+.container {
+  font-size: inherit;
+  --radius: 30;
+  --PI: 3.14159265358979;
+  --circumference: calc(var(--PI) * var(--radius) * 2px);
+}
+.container svg {
+  /* animation: rotator 1.4s linear infinite; */
+}
+.container svg circle {
+  stroke-dasharray: var(--circumference);
+  stroke-dashoffset: 0;
+  transform-origin: center;
+  animation: dash 2s ease-in-out infinite;
+  stroke: currentColor;
+}
+
+@keyframes rotator {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(270deg);
+  }
+}
+
+@keyframes dash {
+  0% {
+    stroke-dashoffset: var(--circumference);
+  }
+  /* 50% {
+    stroke-dashoffset: calc(var(--circumference) / 4);
+    transform: rotate(135deg);
+  } */
+  100% {
+    stroke-dashoffset: calc(var(--circumference) * -1);
+    /* transform: rotate(450deg); */
+  }
+}
