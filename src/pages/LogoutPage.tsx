@@ -33,14 +33,12 @@ const LogoutPage = () => {
 
     const queryString = new URLSearchParams({
       id_token_hint: openId,
-      post_logout_redirect_uri:
-        window.location.origin.replace(/\/$/, "") + "/logout",
     }).toString();
 
     const redirect_uri = `${IDP_URL}/connect/endsessionwithredirect?${queryString}`;
     window.location.href = redirect_uri;
   }, [openId, hash, onSuccessLogout, onRejectedLogout]);
-  return <div>Logout</div>;
+  return null
 };
 
 export default LogoutPage;
