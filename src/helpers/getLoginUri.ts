@@ -7,7 +7,7 @@ export const getLoginUri = () => {
 
   const queryString = new URLSearchParams({
     client_id: IDP_CLIENT,
-    redirect_uri: window.location.origin.replace(/\/$/, "") + "/login-success",
+    redirect_uri: window.location.origin.replace(/\/$/, "") + "/login-response",
     response_type: "code",
     scope: `openid profile offline_access ${
       createAllowed ? "createAllowed" : ""

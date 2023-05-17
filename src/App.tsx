@@ -20,7 +20,7 @@ function App() {
         }
       />
       <Route
-        path="login-success"
+        path="login-response"
         element={
           <Suspense fallback="">
             <LoginResponsePage />
