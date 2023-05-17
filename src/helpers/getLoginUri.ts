@@ -1,4 +1,4 @@
-import { IDP_CLIENT, IDP_URL } from "../constants";
+import { IDP_CLIENT, IDP_URL, loginResponsePath } from "../constants";
 
 export const getLoginUri = () => {
   //TODO restrict creation only for specific domains
@@ -7,7 +7,7 @@ export const getLoginUri = () => {
 
   const queryString = new URLSearchParams({
     client_id: IDP_CLIENT,
-    redirect_uri: window.location.origin.replace(/\/$/, "") + "/login-response",
+    redirect_uri: window.location.origin.replace(/\/$/, "") + loginResponsePath,
     response_type: "code",
     scope: `openid profile offline_access ${
       createAllowed ? "createAllowed" : ""

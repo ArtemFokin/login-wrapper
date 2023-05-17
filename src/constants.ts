@@ -12,3 +12,6 @@ export const LOGIN_URL = "https://login.identity-dev.niftybridge.io";
 export const magicClient = new Magic(MAGIC_API_KEY, {
   extensions: [new OpenIdExtension()],
 });
+
+
+export const loginResponsePath = '/login-response'

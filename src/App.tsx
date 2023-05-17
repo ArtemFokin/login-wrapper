@@ -2,6 +2,7 @@ import "./App.css";
 import { Routes, Route, Navigate } from "react-router-dom";
 
 import { lazy, Suspense } from "react";
+import { loginResponsePath } from "./constants";
 
 const LoginPage = lazy(() => import("./pages/LoginPage"));
 const LoginResponsePage = lazy(() => import("./pages/LoginResponsePage"));
@@ -20,7 +21,7 @@ function App() {
         }
       />
       <Route
-        path="login-response"
+        path={loginResponsePath}
         element={
           <Suspense fallback="">
             <LoginResponsePage />

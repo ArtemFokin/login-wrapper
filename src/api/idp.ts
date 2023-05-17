@@ -1,4 +1,4 @@
-import { IDP_CLIENT, IDP_CLIENT_SECRET, IDP_URL } from "../constants";
+import { IDP_CLIENT, IDP_CLIENT_SECRET, IDP_URL, loginResponsePath } from "../constants";
 
 type FetchTokensResponse = {
   id_token: string;
@@ -16,7 +16,7 @@ export const fetchTokens = async (
     client_id: IDP_CLIENT,
     client_secret: IDP_CLIENT_SECRET,
     grant_type: "authorization_code",
-    redirect_uri: window.location.origin.replace(/\/$/, "") + "/login-success",
+    redirect_uri: window.location.origin.replace(/\/$/, "") + loginResponsePath,
     scope: "openid profile offline_access",
     code,
   };
